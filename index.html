@@ -5,9 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Finder</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1>Meal Finder</h1>
+    <div class="container">
+      <h1>Meal Finder</h1>
+      <div class="flex">
+        <form class="flex" id="submit">
+          <input type="text" id="search" placeholder="Search for meals" />
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <button class="random-btn" id="random">
+          <i class="fas fa-random"></i>
+        </button>
+      </div>
+
+      <div id="result-heading"></div>
+      <div id="meals" class="meals"></div>
+      <div id="single-meal"></div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
   </body>
