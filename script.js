@@ -91,8 +91,23 @@ const getMealById = async (mealID) => {
   addMealToDOM(meal);
 };
 
+// Fetch random meal data from API
+const getRandomMeal = async () => {
+  mealsEl.innerHTML = "";
+  resultHeading.innerHTML = "";
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/random.php`
+  );
+
+  const data = await response.json();
+  const meal = data.meals[0];
+
+  addMealToDOM(meal);
+};
+
 // Event Listener
 submit.addEventListener("submit", searchMeal);
+random.addEventListener("click", getRandomMeal);
 mealsEl.addEventListener("click", (e) => {
   const mealInfo = e.composedPath().find((item) => {
     if (item.classList) {
